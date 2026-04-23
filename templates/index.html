@@ -1,108 +1,115 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Green India Eco Industries</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-    <div class="navbar">
-        <div class="logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}">
-            <div class="brand-text">
-                <h2>GREEN INDIA</h2>
-                <p>ECO INDUSTRIES</p>
-            </div>
-        </div>
-
-        <div class="menu">
-            <a href="/">Home</a>
-            <a href="/cart">Cart 🛒</a>
-            <a href="#contact">Contact</a>
-
-            <!-- SEARCH -->
-            <form action="/search" method="GET" class="search-box">
-                <input type="text" name="q" placeholder="Search..." required>
-                <button type="submit">🔍</button>
-            </form>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}">
+        <div class="brand-text">
+            <h2>GREEN INDIA</h2>
+            <p>ECO INDUSTRIES</p>
         </div>
     </div>
-    <div class="hero">
+
+    <div class="menu">
+        <a href="/">Home</a>
+        <a href="/cart">Cart 🛒</a>
+        <a href="#contact">Contact</a>
+
+        <!-- SEARCH -->
+        <form action="/search" method="GET" class="search-box">
+            <input type="text" name="q" placeholder="Search..." required>
+            <button type="submit">🔍</button>
+        </form>
+    </div>
+</div>
+
+<!-- HERO SLIDER -->
+<div class="hero-slider">
+
+    <div class="slide active" style="background-image: url('{{ url_for('static', filename='images/bg.jpg') }}')">
         <div class="hero-content">
-            <h1>Welcome to Green India 🌿</h1>
-            <p>Eco-friendly products for a better future</p>
+            <h1>Eco Friendly Living 🌿</h1>
+            <p>Save nature with sustainable products</p>
             <button class="btn">Shop Now</button>
         </div>
     </div>
 
-    <!-- HERO SECTION -->
-    <div class="hero">
+    <div class="slide" style="background-image: url('{{ url_for('static', filename='images/banner.jpg') }}')">
         <div class="hero-content">
-            <h1>Say No to Plastic,<br>Yes to Nature 🌿</h1>
-            <a href="#products"><button class="btn">Shop Now</button></a>
+            <h1>Say No to Plastic 🚫</h1>
+            <p>Choose biodegradable alternatives</p>
+            <button class="btn">Explore</button>
         </div>
     </div>
 
-    <!-- FEATURES -->
-    <div class="features">
-        <div class="feature card">
-            <h3>Eco Friendly</h3>
-            <p>Safe for environment</p>
-        </div>
+</div>
 
-        <div class="feature card">
-            <h3>Biodegradable</h3>
-            <p>100% compostable</p>
-        </div>
-
-        <div class="feature card">
-            <h3>Zero Plastic</h3>
-            <p>Clean future</p>
-        </div>
+<!-- FEATURES -->
+<div class="features">
+    <div class="card">
+        <h3>Eco Friendly</h3>
+        <p>Safe for environment</p>
     </div>
 
-    <!-- PRODUCTS -->
-    <h2 style="text-align:center; margin-top:40px;">Our Products</h2>
-
-    <div class="products" id="products">
-
-        {% if products %}
-        {% for product in products %}
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/' + product['image']) }}">
-            <h3>{{ product['name'] }}</h3>
-            <p>₹{{ product['price'] }}</p>
-
-            <a href="/add/{{ product['id'] }}">
-                <button class="btn">Add to Cart</button>
-            </a>
-        </div>
-        {% endfor %}
-        {% else %}
-        <p style="text-align:center;">No products available</p>
-        {% endif %}
-
-    </div>
-    <!-- CONTACT SECTION -->
-    <div class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <p>📍 Green India Eco Industries</p>
-        <p>📞 +91 9515480933</p>
-        <p>📧 greenindia@email.com</p>
+    <div class="card">
+        <h3>Biodegradable</h3>
+        <p>100% compostable</p>
     </div>
 
-    <footer class="footer">
-        <p>© <span id="year"></span> Green India Eco Industries</p>
-    </footer>
+    <div class="card">
+        <h3>Zero Plastic</h3>
+        <p>Clean future</p>
+    </div>
+</div>
 
-    <script>
-        document.getElementById("year").innerText = new Date().getFullYear();
-    </script>
+<!-- PRODUCTS -->
+<h2 style="text-align:center;">Our Products</h2>
+
+<div class="products">
+    {% for product in products %}
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/' + product['image']) }}">
+        <h3>{{ product['name'] }}</h3>
+        <p>₹{{ product['price'] }}</p>
+        <a href="/add/{{ product['id'] }}">
+            <button class="btn">Add to Cart</button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Green India Eco Industries</p>
+    <p>📞 +91 9876543210</p>
+    <p>📧 greenindia@email.com</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Green India Eco Industries</p>
+</footer>
+
+<!-- SLIDER SCRIPT -->
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}, 3000);
+</script>
 
 </body>
-
 </html>

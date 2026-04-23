@@ -1,14 +1,11 @@
-/* RESET */
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     overflow-x: hidden;
-    background: linear-gradient(to bottom, #f0fff4, #ffffff);
-    line-height: 1.6;
 }
 
 /* NAVBAR */
@@ -29,113 +26,83 @@ body {
 
 .logo img {
     width: 45px;
-    height: 45px;
     border-radius: 50%;
 }
 
-.brand-text h2 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.brand-text p {
-    margin: 0;
-    font-size: 11px;
-}
-
-/* MENU */
 .menu {
     display: flex;
+    gap: 15px;
     align-items: center;
-    gap: 20px;
 }
 
 .menu a {
     color: white;
     text-decoration: none;
-    font-size: 14px;
-    position: relative;
-}
-
-.menu a::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: white;
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    transition: 0.3s;
-}
-
-.menu a:hover::after {
-    width: 100%;
 }
 
 /* SEARCH */
-.search-box {
-    display: flex;
-    align-items: center;
-}
-
 .search-box input {
-    padding: 8px;
-    border: none;
-    outline: none;
+    padding: 7px;
     border-radius: 20px 0 0 20px;
+    border: none;
 }
 
 .search-box button {
-    padding: 8px 12px;
+    padding: 7px;
+    border-radius: 0 20px 20px 0;
     border: none;
     background: #1fa34a;
     color: white;
-    border-radius: 0 20px 20px 0;
-    cursor: pointer;
 }
 
 /* HERO */
-.hero {
-    height: 350px;
-    background: url('../images/banner.jpg') no-repeat center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    padding-left: 40px;
-    color: white;
+.hero-slider {
+    height: 400px;
+    position: relative;
 }
 
-/* HERO CONTENT */
-.hero-content {
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0;
+    transition: 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,0.4);
-    padding: 20px;
-    border-radius: 10px;
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 35px;
 }
 
-/* BUTTON 3D */
+/* BUTTON */
 .btn {
-    background: linear-gradient(145deg, #1fa34a, #0b5d2a);
+    background: #1fa34a;
     padding: 10px 20px;
     border: none;
     color: white;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
-    box-shadow: 0 6px #084d22;
-    transition: 0.2s;
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-}
-
-.btn:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px #084d22;
 }
 
 /* FEATURES */
@@ -143,7 +110,6 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 30px;
-    gap: 20px;
 }
 
 /* PRODUCTS */
@@ -151,32 +117,26 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    perspective: 1000px; /* 3D depth */
+    gap: 20px;
+    perspective: 1000px;
 }
 
 /* CARD 3D */
 .card {
     width: 220px;
     background: white;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 10px;
     text-align: center;
     transition: 0.5s;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transform-style: preserve-3d;
 }
 
 .card img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
 }
 
-/* REAL 3D HOVER */
 .card:hover {
-    transform: rotateY(10deg) rotateX(5deg) scale(1.05);
-    box-shadow: 20px 25px 40px rgba(0,0,0,0.4);
+    transform: rotateY(10deg) scale(1.05);
 }
 
 /* CONTACT */
@@ -184,8 +144,7 @@ body {
     background: #0b5d2a;
     color: white;
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 40px;
+    padding: 30px;
 }
 
 /* FOOTER */
@@ -193,125 +152,24 @@ body {
     background: #083d1c;
     color: white;
     text-align: center;
-    padding: 15px;
-    font-size: 13px;
+    padding: 10px;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media (max-width: 768px) {
-
     .navbar {
         flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .logo {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .brand-text h2 {
-        font-size: 16px;
-    }
-
-    .brand-text p {
-        font-size: 10px;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 10px;
-    }
-
-    .search-box {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .search-box input {
-        width: 75%;
-    }
-
-    .search-box button {
-        width: 25%;
-    }
-
-    .hero {
-        height: auto;
-        padding: 50px 20px;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 20px;
-    }
-
-    .hero-content {
-        margin: auto;
     }
 
     .features {
         flex-direction: column;
-        align-items: center;
     }
 
     .card {
         width: 90%;
     }
-}
-.hero {
-    width: 100%;
-    height: 400px;
-    background: url('../images/bg.jpg') no-repeat center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
 
-/* DARK OVERLAY FOR TEXT VISIBILITY */
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.4);
-}
-
-/* TEXT CONTENT */
-.hero-content {
-    position: relative;
-    color: white;
-    text-align: center;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 36px;
-}
-
-.hero p {
-    font-size: 18px;
-}
-
-@media (max-width: 768px) {
-    .hero {
+    .hero-slider {
         height: 250px;
-        padding: 20px;
-    }
-
-    .hero h1 {
-        font-size: 20px;
-    }
-
-    .hero p {
-        font-size: 14px;
     }
 }
