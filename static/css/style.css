@@ -228,3 +228,12 @@ body {
         margin: auto;
     }
 }
+
+.footer {
+    background: #0b5d2a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+}
