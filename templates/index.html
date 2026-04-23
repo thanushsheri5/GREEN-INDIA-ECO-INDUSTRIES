@@ -1,61 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Green India Eco Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green India Eco Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="logo">🌿 Green India Eco Store</div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Say No to Plastic, Yes to Nature!</h1>
+      <p>Shop eco-friendly, compostable, and sustainable products.</p>
+      <button class="btn">Explore Now</button>
+    </div>
+  </section>
 
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
+      <span>Green India Eco Store</span>
+    </div>
     <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Offers</a>
-        <a href="#">Contact</a>
+      <a href="#products">Products</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact</a>
     </div>
-
-    <form class="search">
-        <input type="text" placeholder="Search eco products...">
-        <button>Search</button>
-    </form>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-    <h1>Say No to Plastic, Yes to Nature!</h1>
-    <p>Shop eco-friendly, compostable, and sustainable products.</p>
-    <button class="btn">Explore Now</button>
-</div>
-
-<!-- OFFERS -->
-<div class="offers">
-    <div class="offer-card">Flat 20% Off</div>
-    <div class="offer-card">Buy 1 Get 1</div>
-</div>
-
-<!-- PRODUCTS -->
-<h2 class="section-title">🌿 Our Products</h2>
-
-<div class="products">
-    {% for product in products %}
-    <div class="card">
-        <img src="{{ url_for('static', filename='images/' + product['image']) }}">
-        <h3>{{ product['name'] }}</h3>
-        <p>₹{{ product['price'] }}</p>
-        <button>Add to Cart</button>
+    <div class="search-box">
+      <input type="text" placeholder="Search eco products...">
+      <button>Search</button>
     </div>
-    {% endfor %}
-</div>
+  </nav>
 
-<!-- FOOTER -->
-<div class="footer">
-    Email: support@greenindia.com | Phone: +91 98765 43210
-</div>
+  <!-- Products -->
+  <section id="products" class="products">
+    <h2>🌱 Our Products</h2>
+    <div class="product-grid">
+      <div class="card">
+        <img src="images/bag1.jpg" alt="Compostable Bag">
+        <h3>Compostable Carry Bag</h3>
+        <p>Durable and 100% biodegradable.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="images/bag2.jpg" alt="Reusable Bag">
+        <h3>Reusable Eco Bag</h3>
+        <p>Stylish and sustainable for daily use.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="images/bag3.jpg" alt="Pellets">
+        <h3>Biodegradable Pellets</h3>
+        <p>Raw material for eco products.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offers -->
+  <section id="offers" class="offers">
+    <h2>🌟 Special Offers</h2>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <h3>Flat 20% Off</h3>
+        <p>On compostable carry bags</p>
+      </div>
+      <div class="offer-card">
+        <h3>Buy 1 Get 1</h3>
+        <p>On reusable eco bags</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@greenindia.com | Phone: +91 98765 43210</p>
+    <button class="btn">Get in Touch</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Green India Eco Store | Save Earth for Future Generations</p>
+  </footer>
 
 </body>
 </html>
