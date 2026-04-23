@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, redirect
+from flask import Flask, render_template, session, redirect, request
 import sqlite3
 
 app = Flask(__name__)
@@ -43,6 +43,19 @@ def cart():
             items.append(product)
 
     return render_template('cart.html', items=items)
+
+# ---------------- SEARCH ----------------
+@app.route('/search')
+def search():
+    query = request.args.get('q')
+
+    db = get_db()
+    products = db.execute(
+        "SELECT * FROM products WHERE name LIKE ?",
+        ('%' + query + '%',)
+    ).fetchall()
+
+    return render_template('index.html', products=products)
 
 # ---------------- RUN ----------------
 if __name__ == '__main__':
