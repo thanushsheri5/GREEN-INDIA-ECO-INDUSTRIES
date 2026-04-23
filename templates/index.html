@@ -1,45 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Green India Store</title>
+    <title>Green India Eco Industries</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- PARTICLES -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 
 <body>
 
-<!-- AMAZON STYLE NAVBAR -->
-<div class="topbar">
-    <div class="logo">🌿 Green India</div>
+<!-- PARTICLES BACKGROUND -->
+<div id="particles-js"></div>
 
-    <form action="/search" method="GET" class="search-bar">
-        <input type="text" name="q" placeholder="Search products..." required>
-        <button>🔍</button>
-    </form>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}">
+        <div>
+            <h2>GREEN INDIA</h2>
+            <p>ECO INDUSTRIES</p>
+        </div>
+    </div>
 
-    <div class="nav-links">
-        <a href="/cart">🛒 Cart</a>
+    <div class="menu">
+        <a href="/">Home</a>
+        <a href="/cart">Cart 🛒</a>
+        <a href="#contact">Contact</a>
+
+        <form action="/search" method="GET" class="search-box">
+            <input type="text" name="q" placeholder="Search..." required>
+            <button>🔍</button>
+        </form>
     </div>
 </div>
 
-<!-- HERO BANNER -->
-<div class="banner">
-    <h1>Eco Products for Better Future</h1>
+<!-- HERO -->
+<div class="hero">
+
+    <div class="hero-content">
+        <h1>🌿 Grow Green Future</h1>
+        <p>Eco-friendly products for a better tomorrow</p>
+        <button class="btn">Explore</button>
+    </div>
+
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+    <div class="card">
+        <h3>Eco Friendly</h3>
+        <p>Safe for environment</p>
+    </div>
+
+    <div class="card">
+        <h3>Biodegradable</h3>
+        <p>100% compostable</p>
+    </div>
+
+    <div class="card">
+        <h3>Zero Plastic</h3>
+        <p>Clean future</p>
+    </div>
 </div>
 
 <!-- PRODUCTS -->
-<div class="product-section">
+<h2 class="section-title">Our Products</h2>
+
+<div class="products">
     {% for product in products %}
-    <div class="product-card">
+    <div class="card product-card">
         <img src="{{ url_for('static', filename='images/' + product['image']) }}">
         <h3>{{ product['name'] }}</h3>
         <p>₹{{ product['price'] }}</p>
         <a href="/add/{{ product['id'] }}">
-            <button>Add to Cart</button>
+            <button class="btn">Add to Cart</button>
         </a>
     </div>
     {% endfor %}
 </div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Green India Eco Industries</p>
+    <p>📞 +91 9876543210</p>
+    <p>📧 greenindia@email.com</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Green India Eco Industries</p>
+</footer>
+
+<!-- PARTICLES SCRIPT -->
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 35 },
+    color: { value: "#4caf50" },
+    opacity: { value: 0.3 },
+    size: { value: 3 },
+    move: { speed: 1, direction: "top" }
+  }
+});
+</script>
 
 </body>
 </html>
