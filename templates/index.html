@@ -3,16 +3,24 @@
 <head>
     <title>Green India Eco Industries</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- PARTICLES -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 
 <body>
+
+<!-- PARTICLES BACKGROUND -->
+<div id="particles-js"></div>
 
 <!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">
         <img src="{{ url_for('static', filename='images/logo.png') }}">
-        <div class="brand-text">
+        <div>
             <h2>GREEN INDIA</h2>
             <p>ECO INDUSTRIES</p>
         </div>
@@ -23,31 +31,20 @@
         <a href="/cart">Cart 🛒</a>
         <a href="#contact">Contact</a>
 
-        <!-- SEARCH -->
         <form action="/search" method="GET" class="search-box">
             <input type="text" name="q" placeholder="Search..." required>
-            <button type="submit">🔍</button>
+            <button>🔍</button>
         </form>
     </div>
 </div>
 
-<!-- HERO SLIDER -->
-<div class="hero-slider">
+<!-- HERO -->
+<div class="hero">
 
-    <div class="slide active" style="background-image: url('{{ url_for('static', filename='images/bg.jpg') }}')">
-        <div class="hero-content">
-            <h1>Eco Friendly Living 🌿</h1>
-            <p>Save nature with sustainable products</p>
-            <button class="btn">Shop Now</button>
-        </div>
-    </div>
-
-    <div class="slide" style="background-image: url('{{ url_for('static', filename='images/banner.jpg') }}')">
-        <div class="hero-content">
-            <h1>Say No to Plastic 🚫</h1>
-            <p>Choose biodegradable alternatives</p>
-            <button class="btn">Explore</button>
-        </div>
+    <div class="hero-content">
+        <h1>🌿 Grow Green Future</h1>
+        <p>Eco-friendly products for a better tomorrow</p>
+        <button class="btn">Explore</button>
     </div>
 
 </div>
@@ -71,11 +68,11 @@
 </div>
 
 <!-- PRODUCTS -->
-<h2 style="text-align:center;">Our Products</h2>
+<h2 class="section-title">Our Products</h2>
 
 <div class="products">
     {% for product in products %}
-    <div class="card">
+    <div class="card product-card">
         <img src="{{ url_for('static', filename='images/' + product['image']) }}">
         <h3>{{ product['name'] }}</h3>
         <p>₹{{ product['price'] }}</p>
@@ -99,16 +96,17 @@
     <p>© 2026 Green India Eco Industries</p>
 </footer>
 
-<!-- SLIDER SCRIPT -->
+<!-- PARTICLES SCRIPT -->
 <script>
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-}, 3000);
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 35 },
+    color: { value: "#4caf50" },
+    opacity: { value: 0.3 },
+    size: { value: 3 },
+    move: { speed: 1, direction: "top" }
+  }
+});
 </script>
 
 </body>
