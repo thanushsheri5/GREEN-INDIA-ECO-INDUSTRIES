@@ -69,8 +69,8 @@ body {
 
 /* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('../images/banner.jpg') no-repeat center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/banner.jpg') no-repeat center;
     background-size: cover;
     height: 400px;
     display: flex;
@@ -102,7 +102,7 @@ body {
 /* hover lift */
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* click press */
@@ -119,7 +119,7 @@ body {
     height: 200%;
     top: 100%;
     left: -50%;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     transform: rotate(25deg);
     transition: 0.5s;
 }
@@ -144,13 +144,13 @@ body {
     text-align: center;
 
     transition: 0.4s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* hover 3D */
 .card:hover {
     transform: rotateY(8deg) rotateX(8deg) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* mobile tap */
@@ -206,5 +206,217 @@ body {
     .card {
         width: 90%;
         margin: auto;
+    }
+
+    /* RESET */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #f0fff4, #ffffff);
+    }
+
+    /* NAVBAR */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 60px;
+        background: rgba(11, 93, 42, 0.9);
+        color: white;
+    }
+
+    /* LOGO */
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+    }
+
+    /* BRAND */
+    .brand-text h2 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .brand-text p {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    /* MENU */
+    .menu {
+        display: flex;
+        gap: 25px;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        position: relative;
+    }
+
+    /* underline animation */
+    .menu a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background: white;
+        transition: 0.3s;
+    }
+
+    .menu a:hover::after {
+        width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url('../images/banner.jpg') no-repeat center;
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+        color: white;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    /* ================= 3D BUTTON ================= */
+    .btn {
+        background: linear-gradient(135deg, #1fa34a, #0b5d2a);
+        padding: 12px 25px;
+        border: none;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 15px;
+
+        box-shadow: 0 6px #084d22;
+        transition: 0.2s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* hover lift */
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* click press */
+    .btn:active {
+        transform: translateY(3px);
+        box-shadow: 0 3px #084d22;
+    }
+
+    /* shine effect */
+    .btn::after {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: 100%;
+        left: -50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(25deg);
+        transition: 0.5s;
+    }
+
+    .btn:hover::after {
+        top: -50%;
+    }
+
+    /* FEATURES */
+    .features {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px;
+    }
+
+    /* CARD 3D */
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        width: 200px;
+        text-align: center;
+
+        transition: 0.4s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* hover 3D */
+    .card:hover {
+        transform: rotateY(8deg) rotateX(8deg) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* mobile tap */
+    .card:active {
+        transform: scale(0.95);
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+
+        /* NAVBAR */
+        .navbar {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+        }
+
+        /* LOGO */
+        .logo {
+            justify-content: flex-start;
+        }
+
+        /* MENU ON RIGHT */
+        .menu {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+        }
+
+        .menu a {
+            font-size: 14px;
+            padding: 4px 6px;
+        }
+
+        /* HERO */
+        .hero {
+            height: auto;
+            padding: 50px 15px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 24px;
+        }
+
+        /* FEATURES */
+        .features {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            width: 90%;
+            margin: auto;
+        }
+
     }
 }
