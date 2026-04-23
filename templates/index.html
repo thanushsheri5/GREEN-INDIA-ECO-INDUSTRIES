@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Green India Eco Industries</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -14,7 +13,6 @@
 <div class="navbar">
     <div class="logo">
         <img src="{{ url_for('static', filename='images/logo.png') }}">
-
         <div class="brand-text">
             <h2>GREEN INDIA</h2>
             <p>ECO INDUSTRIES</p>
@@ -22,18 +20,17 @@
     </div>
 
     <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
+        <a href="/">Home</a>
+        <a href="/cart">Cart 🛒</a>
         <a href="#">Contact</a>
     </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <div class="hero">
     <div class="hero-content">
         <h1>Say No to Plastic,<br>Yes to Nature 🌿</h1>
-
-        <button class="btn">Shop Now</button>
+        <a href="#products"><button class="btn">Shop Now</button></a>
     </div>
 </div>
 
@@ -54,70 +51,28 @@
         <p>Clean future</p>
     </div>
 </div>
-{% for product in products %}
-<div class="card">
-    <img src="{{ url_for('static', filename='images/' + product['image']) }}">
-    <h3>{{ product['name'] }}</h3>
-    <p>₹{{ product['price'] }}</p>
-</div>
-{% endfor %}
 
-</body>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Green India Eco Industries</title>
+<!-- PRODUCTS -->
+<h2 style="text-align:center; margin-top:40px;">Our Products</h2>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="products" id="products">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+    {% if products %}
+        {% for product in products %}
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/' + product['image']) }}">
+            <h3>{{ product['name'] }}</h3>
+            <p>₹{{ product['price'] }}</p>
 
-<body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="logo">
-        <img src="{{ url_for('static', filename='images/logo.png') }}">
-
-        <div class="brand-text">
-            <h2>GREEN INDIA</h2>
-            <p>ECO INDUSTRIES</p>
+            <a href="/add/{{ product['id'] }}">
+                <button class="btn">Add to Cart</button>
+            </a>
         </div>
-    </div>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center;">No products available</p>
+    {% endif %}
 
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Contact</a>
-    </div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-    <div class="hero-content">
-        <h1>Say No to Plastic,<br>Yes to Nature 🌿</h1>
-
-        <button class="btn">Shop Now</button>
-    </div>
-</div>
-
-<!-- FEATURES -->
-<div class="features">
-    <div class="feature card">
-        <h3>Eco Friendly</h3>
-        <p>Safe for environment</p>
-    </div>
-
-    <div class="feature card">
-        <h3>Biodegradable</h3>
-        <p>100% compostable</p>
-    </div>
-
-    <div class="feature card">
-        <h3>Zero Plastic</h3>
-        <p>Clean future</p>
-    </div>
 </div>
 
 </body>
