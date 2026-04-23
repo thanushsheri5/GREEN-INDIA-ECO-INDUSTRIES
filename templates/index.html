@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Green India Eco Industries</title>
+  <title>Green India Eco Store</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Particle.js for motion background -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
@@ -15,74 +14,89 @@
   <nav class="navbar">
     <div class="logo">
       <img src="images/logo.png" alt="Logo">
-      <span>Green India Eco Industries</span>
+      <span>Green India Eco Store</span>
     </div>
     <div class="menu">
-      <a href="#features">Features</a>
+      <a href="#home">Home</a>
       <a href="#products">Products</a>
+      <a href="#offers">Offers</a>
       <a href="#contact">Contact</a>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search eco products...">
+      <button>Search</button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- Hero Banner -->
+  <section id="home" class="hero">
     <div class="hero-content">
       <h1>Say No to Plastic, Yes to Nature!</h1>
-      <p>Eco-friendly, compostable solutions for a sustainable future.</p>
-      <button class="btn">Join the Green Revolution</button>
+      <p>Shop eco-friendly, compostable, and sustainable products.</p>
+      <button class="btn">Explore Now</button>
     </div>
   </section>
 
-  <!-- Features -->
-  <section id="features" class="features">
-    <div class="feature-card">
-      <h2>🌱 Eco-Friendly</h2>
-      <p>100% compostable and safe for the environment.</p>
-    </div>
-    <div class="feature-card">
-      <h2>♻️ Zero Waste</h2>
-      <p>Designed to decompose naturally and return to the soil.</p>
-    </div>
-    <div class="feature-card">
-      <h2>🌍 Sustainable</h2>
-      <p>Supporting a cleaner, greener planet for future generations.</p>
+  <!-- Featured Offers -->
+  <section id="offers" class="offers">
+    <h2 class="section-title">🌟 Special Offers</h2>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <h3>Flat 20% Off</h3>
+        <p>On compostable carry bags</p>
+      </div>
+      <div class="offer-card">
+        <h3>Buy 1 Get 1</h3>
+        <p>On reusable eco bags</p>
+      </div>
     </div>
   </section>
 
   <!-- Products -->
   <section id="products" class="products">
-    <div class="card">
-      <img src="images/bag1.jpg" alt="Compostable Bag">
-      <h3>Compostable Carry Bag</h3>
-      <p>Strong, durable, and 100% biodegradable.</p>
-    </div>
-    <div class="card">
-      <img src="images/bag2.jpg" alt="Eco Bag">
-      <h3>Eco Bag</h3>
-      <p>Reusable and stylish, perfect for daily use.</p>
+    <h2 class="section-title">🌱 Our Products</h2>
+    <div class="product-grid">
+      <div class="card">
+        <img src="images/bag1.jpg" alt="Compostable Bag">
+        <h3>Compostable Carry Bag</h3>
+        <p>Durable and 100% biodegradable.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="images/bag2.jpg" alt="Eco Bag">
+        <h3>Reusable Eco Bag</h3>
+        <p>Stylish and sustainable for daily use.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="images/bag3.jpg" alt="Pellets">
+        <h3>Biodegradable Pellets</h3>
+        <p>Raw material for eco products.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>Email: info@greenindia.com | Phone: +91 98765 43210</p>
+    <p>Email: support@greenindia.com | Phone: +91 98765 43210</p>
     <button class="btn">Get in Touch</button>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2026 Green India Eco Industries | Save Earth for Future Generations</p>
+    <p>© 2026 Green India Eco Store | Save Earth for Future Generations</p>
   </footer>
 
   <!-- Particle Config -->
   <script>
     particlesJS("particles-js", {
       particles: {
-        number: { value: 80 },
+        number: { value: 100 },
         color: { value: "#1fa34a" },
         shape: { type: "circle" },
-        opacity: { value: 0.5 },
+        opacity: { value: 0.4 },
         size: { value: 3 },
         move: { enable: true, speed: 2 }
       }

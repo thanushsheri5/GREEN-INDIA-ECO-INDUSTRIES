@@ -22,35 +22,29 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
-  background: rgba(11,93,42,0.85);
+  background: rgba(11,93,42,0.9);
   backdrop-filter: blur(10px);
   color: white;
   position: sticky;
   top: 0;
   z-index: 10;
 }
-
 .logo img { width: 45px; border-radius: 50%; }
 .menu a { color: white; text-decoration: none; margin: 0 10px; transition: 0.3s; }
 .menu a:hover { color: #ffd700; }
+.search-box input { padding: 7px; border-radius: 20px 0 0 20px; border: none; }
+.search-box button { padding: 7px; border-radius: 0 20px 20px 0; border: none; background: #ffd700; color: #0b5d2a; }
 
 /* HERO */
 .hero {
-  height: 90vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   background: linear-gradient(to right, #0b5d2a, #1fa34a);
-  position: relative;
-  overflow: hidden;
 }
-
-.hero-content {
-  animation: fadeInUp 1.5s ease;
-}
-
 .hero h1 { font-size: 48px; margin-bottom: 15px; }
 .hero p { font-size: 20px; margin-bottom: 25px; }
 
@@ -67,32 +61,21 @@ body {
 }
 .btn:hover { background: #fff; transform: scale(1.05); }
 
-/* FEATURES */
-.features {
-  display: flex;
-  justify-content: space-around;
-  padding: 60px 20px;
-  background: #e8fbe8;
-}
-.feature-card {
+/* OFFERS */
+.offers { padding: 40px 20px; background: #e8fbe8; text-align: center; }
+.offer-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.offer-card {
   background: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  text-align: center;
   transition: transform 0.4s;
 }
-.feature-card:hover { transform: translateY(-10px) scale(1.05); }
+.offer-card:hover { transform: translateY(-10px) scale(1.05); }
 
 /* PRODUCTS */
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  padding: 60px 20px;
-  background: #f5fff7;
-}
+.products { padding: 40px 20px; text-align: center; }
+.product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
 .card {
   width: 250px;
   background: white;
@@ -109,33 +92,18 @@ body {
 .card img { width: 100%; border-radius: 8px; }
 
 /* CONTACT */
-.contact {
-  background: #0b5d2a;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
+.contact { background: #0b5d2a; color: white; text-align: center; padding: 60px 20px; }
 .contact h2 { margin-bottom: 20px; }
 
 /* FOOTER */
-.footer {
-  background: #083d1c;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-
-/* ANIMATIONS */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+.footer { background: #083d1c; color: white; text-align: center; padding: 15px; }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .navbar { flex-direction: column; }
+  .navbar { flex-direction: column; gap: 10px; }
   .menu { flex-direction: column; }
   .hero h1 { font-size: 28px; }
-  .features { flex-direction: column; gap: 20px; }
+  .product-grid { flex-direction: column; align-items: center; }
   .card { width: 90%; }
+  .offer-grid { flex-direction: column; }
 }
