@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Green India Eco Store</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- CSS FIXED -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">
-    <img src="static/logo.jpg">
-    <span>Green India</span>
+    <img src="{{ url_for('static', filename='logo.jpg') }}">
+    <span>Green India Eco Store</span>
   </div>
 
   <div class="menu">
@@ -25,48 +28,45 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Say No to Plastic 🌍</h1>
-    <p>Eco-friendly products for a better future</p>
-    <button class="btn">Shop Now</button>
+    <h1>Say No to Plastic, Yes to Nature 🌍</h1>
+    <p>Shop eco-friendly, compostable, and sustainable products.</p>
+    <button class="btn">Explore Now</button>
   </div>
 </section>
 
+<!-- OFFERS BANNER -->
+<div class="offers-banner">
+  <div class="offer-box">Flat 20% Off</div>
+  <div class="offer-box">Buy 1 Get 1</div>
+</div>
+
 <!-- PRODUCTS -->
 <section id="products" class="products">
-  <h2>Our Products</h2>
+  <h2>🌱 Our Products</h2>
 
   <div class="product-grid">
 
     <div class="card">
-      <img src="static/bag1.jpg">
-      <h3>Compostable Bag</h3>
+      <img src="{{ url_for('static', filename='bag1.jpg') }}">
+      <h3>Compostable Carry Bag</h3>
       <p>100% biodegradable</p>
-      <button class="btn">Buy</button>
+      <button class="btn">Add to Cart</button>
     </div>
 
     <div class="card">
-      <img src="static/bag2.jpg">
+      <img src="{{ url_for('static', filename='bag2.jpg') }}">
       <h3>Reusable Eco Bag</h3>
       <p>Stylish and durable</p>
-      <button class="btn">Buy</button>
+      <button class="btn">Add to Cart</button>
     </div>
 
     <div class="card">
-      <img src="static/bag3.jpg">
-      <h3>Eco Pellets</h3>
+      <img src="{{ url_for('static', filename='bag3.jpg') }}">
+      <h3>Biodegradable Pellets</h3>
       <p>Raw eco material</p>
-      <button class="btn">Buy</button>
+      <button class="btn">Add to Cart</button>
     </div>
 
-  </div>
-</section>
-
-<!-- OFFERS -->
-<section id="offers" class="offers">
-  <h2>Special Offers</h2>
-  <div class="offer-grid">
-    <div class="offer-card">Flat 20% OFF</div>
-    <div class="offer-card">Buy 1 Get 1</div>
   </div>
 </section>
 
@@ -74,12 +74,12 @@
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <p>Email: support@greenindia.com</p>
-  <p>Phone: +91 98765 43210</p>
+  <p>Phone: +91 9515480933</p>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  © 2026 Green India Eco Store
+  © 2026 Green India Eco Store | Save Earth 🌱
 </footer>
 
 </body>
