@@ -1,85 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Green India Eco Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green India Eco Store</title>
 
-  <!-- CSS FIXED -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>🌿 Say No to Plastic, Yes to Nature!</span>
+  <div>info@greenindiaeco.com | +91 98765 43210</div>
+</div>
+
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">
-    <img src="{{ url_for('static', filename='logo.jpg') }}">
-    <span>Green India Eco Store</span>
+    <img src="{{ url_for('static', filename='logo.png') }}">
+    <span>GREEN INDIA</span>
   </div>
 
   <div class="menu">
-    <a href="#products">Products</a>
-    <a href="#offers">Offers</a>
-    <a href="#contact">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Say No to Plastic, Yes to Nature 🌍</h1>
-    <p>Shop eco-friendly, compostable, and sustainable products.</p>
-    <button class="btn">Explore Now</button>
+    <h1>GREEN INDIA ECO INDUSTRIES</h1>
+    <p>Eco-Friendly Solutions for a Better Tomorrow</p>
+    <button class="btn">Explore Products</button>
   </div>
 </section>
 
-<!-- OFFERS BANNER -->
-<div class="offers-banner">
-  <div class="offer-box">Flat 20% Off</div>
-  <div class="offer-box">Buy 1 Get 1</div>
-</div>
+<!-- FEATURES -->
+<section class="features">
+  <div>🌱 Eco-Friendly</div>
+  <div>🛡️ Non-Toxic</div>
+  <div>♻️ Zero Waste</div>
+  <div>🌍 Biodegradable</div>
+</section>
 
-<!-- PRODUCTS -->
-<section id="products" class="products">
-  <h2>🌱 Our Products</h2>
+<!-- PRODUCTS (NO IMAGES) -->
+<section class="products">
+  <h2>OUR PRODUCTS</h2>
 
-  <div class="product-grid">
+  <div class="grid">
 
     <div class="card">
-      <img src="{{ url_for('static', filename='bag1.jpg') }}">
-      <h3>Compostable Carry Bag</h3>
-      <p>100% biodegradable</p>
-      <button class="btn">Add to Cart</button>
+      <h3>Compostable Carry Bags</h3>
+      <p>100% biodegradable eco bags</p>
+      <button>Add to Cart</button>
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='bag2.jpg') }}">
-      <h3>Reusable Eco Bag</h3>
-      <p>Stylish and durable</p>
-      <button class="btn">Add to Cart</button>
+      <h3>Reusable Eco Bags</h3>
+      <p>Stylish and sustainable</p>
+      <button>Add to Cart</button>
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='bag3.jpg') }}">
-      <h3>Biodegradable Pellets</h3>
-      <p>Raw eco material</p>
-      <button class="btn">Add to Cart</button>
+      <h3>Biodegradable Materials</h3>
+      <p>Eco raw materials for industries</p>
+      <button>Add to Cart</button>
     </div>
 
   </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>Email: support@greenindia.com</p>
-  <p>Phone: +91 9515480933</p>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  © 2026 Green India Eco Store | Save Earth 🌱
+  © 2026 Green India Eco Store
 </footer>
 
 </body>
