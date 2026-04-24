@@ -1,82 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Green India Eco Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green India Eco Industries</title>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- ✅ CORRECT WAY -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <span>🌿 Say No to Plastic, Yes to Nature!</span>
-  <div>info@greenindiaeco.com | +91 98765 43210</div>
-</div>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="logo">
-    <img src="{{ url_for('static', filename='logo.png') }}">
-    <span>GREEN INDIA</span>
-  </div>
-
-  <div class="menu">
-    <a href="#">Home</a>
-    <a href="#">Products</a>
-    <a href="#">Contact</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
+<header>
     <h1>GREEN INDIA ECO INDUSTRIES</h1>
     <p>Eco-Friendly Solutions for a Better Tomorrow</p>
-    <button class="btn">Explore Products</button>
-  </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <button>Explore Products</button>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div>🌱 Eco-Friendly</div>
-  <div>🛡️ Non-Toxic</div>
-  <div>♻️ Zero Waste</div>
-  <div>🌍 Biodegradable</div>
-</section>
-
-<!-- PRODUCTS (NO IMAGES) -->
 <section class="products">
-  <h2>OUR PRODUCTS</h2>
-
-  <div class="grid">
+    <h2>OUR PRODUCTS</h2>
 
     <div class="card">
-      <h3>Compostable Carry Bags</h3>
-      <p>100% biodegradable eco bags</p>
-      <button>Add to Cart</button>
+        <h3>Compostable Carry Bags</h3>
+        <p>100% biodegradable eco bags</p>
+        <button>Add to Cart</button>
     </div>
 
     <div class="card">
-      <h3>Reusable Eco Bags</h3>
-      <p>Stylish and sustainable</p>
-      <button>Add to Cart</button>
+        <h3>Reusable Eco Bags</h3>
+        <p>Stylish and sustainable</p>
+        <button>Add to Cart</button>
     </div>
 
     <div class="card">
-      <h3>Biodegradable Materials</h3>
-      <p>Eco raw materials for industries</p>
-      <button>Add to Cart</button>
+        <h3>Biodegradable Materials</h3>
+        <p>Eco raw materials for industries</p>
+        <button>Add to Cart</button>
     </div>
 
-  </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  © 2026 Green India Eco Store
+<footer>
+    <p>© 2026 Green India Eco Store</p>
 </footer>
 
 </body>
