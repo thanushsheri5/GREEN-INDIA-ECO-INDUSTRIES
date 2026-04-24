@@ -8,14 +8,11 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-
-# Optional: Health check (useful for Render)
+# Health check (useful for deployment)
 @app.route('/health')
 def health():
     return "OK", 200
 
-
-# Run app
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=port)
