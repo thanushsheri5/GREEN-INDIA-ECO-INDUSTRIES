@@ -1,62 +1,15 @@
-from flask import Flask, render_template, session, redirect, request
-import sqlite3
+from flask import Flask, render_template, send_from_directory
+import os
 
-app = Flask(__name__)
-app.secret_key = "secret123"
+app = Flask(__name__, static_folder='static')
 
-# ---------------- DATABASE ----------------
-def get_db():
-    conn = sqlite3.connect("database.db")
-    conn.row_factory = sqlite3.Row
-    return conn
-
-# ---------------- HOME ----------------
 @app.route('/')
 def home():
-    db = get_db()
-    products = db.execute("SELECT * FROM products").fetchall()
-    return render_template('index.html', products=products)
+    return open("index.html").read()
 
-# ---------------- ADD TO CART ----------------
-@app.route('/add/<int:id>')
-def add_to_cart(id):
-    if 'cart' not in session:
-        session['cart'] = []
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory('static', filename)
 
-    session['cart'].append(id)
-    session.modified = True
-
-    return redirect('/')
-
-# ---------------- VIEW CART ----------------
-@app.route('/cart')
-def cart():
-    if 'cart' not in session or len(session['cart']) == 0:
-        return "Cart is empty"
-
-    db = get_db()
-    items = []
-
-    for pid in session['cart']:
-        product = db.execute("SELECT * FROM products WHERE id=?", (pid,)).fetchone()
-        if product:
-            items.append(product)
-
-    return render_template('cart.html', items=items)
-
-# ---------------- SEARCH ----------------
-@app.route('/search')
-def search():
-    query = request.args.get('q')
-
-    db = get_db()
-    products = db.execute(
-        "SELECT * FROM products WHERE name LIKE ?",
-        ('%' + query + '%',)
-    ).fetchall()
-
-    return render_template('index.html', products=products)
-
-# ---------------- RUN ----------------
 if __name__ == '__main__':
     app.run(debug=True)
